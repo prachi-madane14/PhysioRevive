@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PhysioRevive Clinic | Physiotherapist in Bandra, Mumbai</title>
+<meta name="description" content="Physiotherapy at the clinic, at your home or online. Book Dr. Aarav Mehta by call or WhatsApp.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{--bg:#F3FAF8;--ink:#0E2A2F;--card:#fff;--mint:#D8F1EC;--teal:#0B7A75;--dark:#083B40;--coral:#FF6F4D;--sun:#FFC857;--mut:#51696d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#071E21;--ink:#EAF6F4;--card:#0E3237;--mint:#0E3237;--mut:#9dbcbc}}
+:root[data-theme="dark"]{--bg:#071E21;--ink:#EAF6F4;--card:#0E3237;--mint:#0E3237;--mut:#9dbcbc}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{background:var(--bg);color:var(--ink);font-family:'Poppins',sans-serif;line-height:1.65}
+h1,h2,h3{font-weight:700;line-height:1.15}
+.mut{color:var(--mut)}.card{background:var(--card);border-radius:1.5rem;box-shadow:0 10px 30px rgba(8,59,64,.08)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.2)}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:rgba(255,255,255,.35);transform:skewX(-20deg);transition:left .6s}.btn:hover::after{left:130%}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+.b1{background:var(--coral);color:#fff}.b2{background:var(--teal);color:#fff}.b3{background:#fff;color:var(--dark)}
+.sec{padding:5rem 1.25rem;max-width:72rem;margin:auto}
+.tag{display:inline-block;background:var(--mint);color:var(--teal);font-weight:600;padding:.3rem .9rem;border-radius:999px;font-size:.85rem;margin-bottom:.8rem}
+#pre{position:fixed;inset:0;background:var(--dark);z-index:100;display:grid;place-items:center;color:#fff;text-align:center}
+.pulse{animation:p 2s infinite}@keyframes p{0%{box-shadow:0 0 0 0 rgba(255,111,77,.6)}100%{box-shadow:0 0 0 16px rgba(255,111,77,0)}}
+.flt{animation:f 4s ease-in-out infinite}@keyframes f{50%{transform:translateY(-14px)}}
+.mq{display:flex;width:max-content;animation:m 30s linear infinite}@keyframes m{to{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(40px)}
+.srv{transition:transform .3s;text-align:left}.srv:hover{transform:translateY(-8px) rotate(-1deg)}.srv .ic{transition:transform .4s}.srv:hover .ic{transform:scale(1.25) rotate(8deg)}
+.tile{border-radius:1.5rem;overflow:hidden;display:grid;place-items:center;text-align:center;font-weight:600;color:#fff;min-height:11rem;transition:transform .4s}.tile:hover{transform:scale(1.04)}.tile span{font-size:3.5rem;display:block;transition:transform .4s}.tile:hover span{transform:scale(1.3)}
+details summary{cursor:pointer;font-weight:600;padding:1rem 0;list-style:none}details[open] summary{color:var(--teal)}
+dialog{border-radius:1.5rem;padding:2rem;max-width:30rem;width:90%;background:var(--card);color:var(--ink);margin:auto}dialog::backdrop{background:rgba(0,0,0,.6)}
+input,select,textarea{width:100%;padding:.8rem 1rem;border-radius:.9rem;border:2px solid var(--mint);background:var(--bg);color:var(--ink);margin-top:.25rem}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="pre" aria-hidden="true"><div><div class="text-6xl flt">🩺</div><p class="text-2xl font-bold mt-4">PhysioRevive</p><p class="text-4xl font-extrabold mt-2"><span id="pc">0</span>%</p></div></div>
+<div id="bar" style="position:fixed;top:0;left:0;height:4px;width:0;background:var(--coral);z-index:60"></div>
+
+<header id="nav" class="fixed left-0 right-0 z-50 transition-transform" style="top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px)">
+<div class="max-w-6xl mx-auto flex items-center justify-between px-5 py-3">
+<a href="#top" class="font-extrabold text-xl" style="color:var(--teal)">PhysioRevive</a>
+<nav class="hidden md:flex gap-6 text-sm font-medium" aria-label="Main"><a href="#services">Services</a><a href="#home">Home visit</a><a href="#about">About</a><a href="#pricing">Prices</a><a href="#faq">Questions</a></nav>
+<div class="flex items-center gap-2"><button id="theme" class="w-10 h-10 rounded-full card" aria-label="Switch light or dark">◐</button><a href="#book" class="btn b1 pulse text-sm">Book now</a></div>
+</div></header>
+
+<main id="top">
+<section class="relative overflow-hidden" style="background:linear-gradient(135deg,var(--mint),var(--bg))">
+<div class="absolute rounded-full" style="width:26rem;height:26rem;background:var(--sun);opacity:.35;filter:blur(70px);top:-6rem;right:-6rem" id="o1"></div>
+<div class="absolute rounded-full" style="width:22rem;height:22rem;background:var(--teal);opacity:.25;filter:blur(80px);bottom:-6rem;left:-5rem" id="o2"></div>
+<div class="sec pt-32 grid md:grid-cols-2 gap-10 items-center relative" style="min-height:100svh">
+<div>
+<span class="tag">Dr. Aarav Mehta · Physiotherapist · Bandra, Mumbai</span>
+<h1 id="h1" class="text-4xl md:text-6xl font-extrabold">Feel better. Move freely. Live without pain.</h1>
+<p class="mut mt-5 text-lg max-w-md">Friendly physiotherapy for back pain, injuries, surgery recovery and more. Visit the clinic, get treated at home, or talk online.</p>
+<div class="flex flex-wrap gap-3 mt-8"><a class="btn b1" href="tel:+919876543210">📞 Call now</a><a class="btn b2" href="https://wa.me/919876543210?text=Hi%20Dr.%20Mehta%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener">💬 WhatsApp</a></div>
+<p class="mt-6 text-sm mut">✅ 12+ years experience &nbsp; ✅ Home visits &nbsp; ✅ 4.9 stars</p>
+</div>
+<div class="relative flex justify-center" id="hero-art">
+<div class="card p-4" style="border-radius:3rem;background:linear-gradient(160deg,#fff,var(--mint))">
+<svg viewBox="0 0 320 380" class="w-72 md:w-96" role="img" aria-label="Illustration of a friendly physiotherapist">
+<circle cx="160" cy="190" r="150" fill="#BFE8E0"/><circle cx="160" cy="190" r="105" fill="#9ADBD0"/>
+<path d="M60 380c0-80 45-120 100-120s100 40 100 120z" fill="#fff"/><path d="M130 262l30 50 30-50" fill="#0B7A75"/><rect x="143" y="228" width="34" height="40" rx="12" fill="#E8B48B"/>
+<circle cx="160" cy="175" r="52" fill="#F2C6A0"/><path d="M108 170c0-42 30-58 56-58s48 20 48 58c-8-24-30-34-52-34s-42 10-52 34z" fill="#2B1B14"/>
+<circle cx="141" cy="178" r="5" fill="#2B1B14"/><circle cx="179" cy="178" r="5" fill="#2B1B14"/><path d="M143 198q17 15 34 0" stroke="#2B1B14" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M120 270c-15 30 0 60 40 60" stroke="#083B40" stroke-width="5" fill="none"/><circle cx="160" cy="332" r="9" fill="#FF6F4D"/>
+</svg></div>
+<div class="card absolute flt px-4 py-2 text-sm font-semibold" style="top:8%;left:-2%">🏆 8,500+ happy patients</div>
+<div class="card absolute flt px-4 py-2 text-sm font-semibold" style="bottom:22%;right:-2%;animation-delay:1s">⭐ 4.9 · 420 reviews</div>
+<div class="card absolute flt px-4 py-2 text-sm font-semibold" style="bottom:4%;left:4%;animation-delay:2s">🏠 We come to your home</div>
+</div></div></section>
+
+<div class="overflow-hidden py-4 font-semibold" style="background:var(--dark);color:#fff"><div class="mq" id="mq"></div></div>
+
+<section id="about" class="sec">
+<div class="grid md:grid-cols-2 gap-10 items-center">
+<div class="rv"><span class="tag">About the doctor</span><h2 class="text-3xl md:text-5xl font-extrabold">Treatment you can understand. Results that last.</h2>
+<p class="mut mt-5">Dr. Aarav Mehta has helped thousands of people recover from injuries, surgery and long-term pain. He explains every step, treats you with his hands, and gives you simple exercises to do at home. He speaks English, Hindi, Marathi and Gujarati.</p>
+<p class="mt-4 font-semibold">BPT · MPT (Orthopaedics) · Sports Physio · Dry Needling Certified</p></div>
+<div class="grid grid-cols-2 gap-4" id="cnt"></div></div>
+<h3 class="rv text-2xl font-bold mt-16 mb-6">Where he studied and worked</h3>
+<ol class="border-l-4 pl-6 space-y-5" style="border-color:var(--coral)" id="tl"></ol>
+</section>
+
+<section id="services" style="background:var(--mint)"><div class="sec">
+<span class="tag">Our services</span><h2 class="rv text-3xl md:text-5xl font-extrabold">What we can help you with</h2>
+<p class="mut mt-3">Tap a card to learn more.</p>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8" id="sg"></div></div></section>
+
+<section id="home" class="sec">
+<div class="rounded-3xl p-8 md:p-12 grid md:grid-cols-2 gap-8 items-center" style="background:linear-gradient(135deg,var(--dark),var(--teal));color:#fff">
+<div><span class="tag">🏠 Home visits</span><h2 class="text-3xl md:text-5xl font-extrabold">Can't come to us? We'll come to you.</h2>
+<p class="mt-4 opacity-90">Best for older people, patients after surgery, stroke patients and busy workers. Please book at least 3 hours before.</p>
+<ul class="mt-5 space-y-2 text-sm"><li>📍 <b>Areas:</b> Bandra, Khar, Santacruz, Juhu, Andheri West, Worli, Dadar, Mahim (up to 15 km)</li><li>🕖 <b>Time:</b> 7–10 AM and 6–9 PM, every day</li><li>💰 <b>Extra fee:</b> Free up to 5 km. ₹300 for 5–15 km</li><li>🧰 <b>We bring:</b> TENS machine, bands, tape, foam roller, hot and cold packs, mat</li></ul>
+<a class="btn b1 mt-6" href="https://wa.me/919876543210?text=Hi%20Dr.%20Mehta%2C%20I%20want%20a%20home%20visit." target="_blank" rel="noopener">Ask for a home visit</a></div>
+<svg viewBox="0 0 300 230" class="w-full" aria-hidden="true"><rect width="300" height="230" rx="24" fill="#0a5f63"/><path d="M0 120h300M0 60h300M0 180h300M70 0v230M150 0v230M230 0v230" stroke="#ffffff22" stroke-width="10"/><path d="M40 190C100 200 90 110 150 120S220 50 260 55" fill="none" stroke="#FFC857" stroke-width="5" stroke-dasharray="9 11" stroke-linecap="round" id="route"/><text x="28" y="196" font-size="30">🏥</text><g id="pin"><text x="244" y="62" font-size="34">🏠</text></g><text id="car" font-size="26">🚗</text></svg>
+</div></section>
+
+<section id="process" class="sec">
+<span class="tag">How it works</span><h2 class="rv text-3xl md:text-5xl font-extrabold">Your recovery in 6 easy steps</h2>
+<ol class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8" id="steps"></ol></section>
+
+<section style="background:var(--mint)"><div class="sec">
+<span class="tag">Inside the clinic</span><h2 class="rv text-3xl md:text-5xl font-extrabold">A calm, clean place to heal</h2>
+<p class="mut mt-2 text-sm">Sample pictures. Real clinic photos can be added here.</p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8" id="gal"></div></div></section>
+
+<section id="pricing" class="sec">
+<span class="tag">Prices</span><h2 class="rv text-3xl md:text-5xl font-extrabold">Clear prices. No surprises.</h2>
+<div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-8" id="pg"></div></section>
+
+<section style="background:var(--dark);color:#fff"><div class="sec">
+<span class="tag">Reviews</span><h2 class="rv text-3xl md:text-5xl font-extrabold">What our patients say</h2>
+<div class="flex gap-4 overflow-x-auto snap-x mt-8 pb-4" id="ts"></div></div></section>
+
+<section id="faq" class="sec max-w-3xl">
+<span class="tag">Questions</span><h2 class="rv text-3xl md:text-5xl font-extrabold mb-6">Common questions</h2><div id="fq"></div></section>
+
+<section id="book" style="background:linear-gradient(135deg,var(--mint),var(--bg))"><div class="sec grid md:grid-cols-2 gap-8">
+<div><span class="tag">Book a visit</span><h2 class="text-3xl md:text-5xl font-extrabold">Ready to feel better?</h2>
+<p class="mut mt-4">Fill in the form. It opens WhatsApp with your details, so you only press send. Or just call us.</p>
+<p class="mt-5"><span id="open" class="inline-block px-4 py-1 rounded-full text-sm font-semibold text-white"></span></p>
+<p class="mt-3 mut">Monday to Saturday, 9 AM to 7 PM. Sunday: home visits only.</p>
+<p class="mt-3">📍 Shop 12, Sunrise Plaza, Linking Road, Bandra West, Mumbai 400050</p>
+<div class="flex flex-wrap gap-3 mt-5"><a class="btn b1" href="tel:+919876543210">📞 +91 98765 43210</a><a class="btn b2" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Linking+Road+Bandra+West+Mumbai">🗺️ Get directions</a></div></div>
+<form id="f" class="card p-6 grid gap-3" novalidate>
+<label>Your name<input name="n" required autocomplete="name"></label>
+<div class="grid grid-cols-2 gap-3"><label>Phone number<input name="p" type="tel" required inputmode="tel" autocomplete="tel"></label><label>Age<input name="a" type="number" min="1" max="110"></label></div>
+<label>Your problem<select name="c"><option>Back or neck pain</option><option>Sports injury</option><option>After surgery</option><option>Stroke or nerve problem</option><option>Women's health</option><option>Other</option></select></label>
+<label>Where?<select name="v"><option>At the clinic</option><option>At my home</option><option>Online</option></select></label>
+<label>Best date and time<input name="d" type="datetime-local"></label>
+<label>Anything else?<textarea name="m" rows="2"></textarea></label>
+<p id="err" class="text-sm font-semibold" style="color:var(--coral)" role="alert"></p>
+<button class="btn b1" type="submit">Send on WhatsApp</button>
+<p id="ok" class="hidden font-semibold" style="color:var(--teal)" role="status">✅ Done! WhatsApp is opening. Just press send.</p>
+</form></div></section>
+</main>
+
+<footer class="px-5 py-12 pb-28 md:pb-12" style="background:var(--dark);color:#fff"><div class="max-w-6xl mx-auto">
+<p class="text-3xl font-extrabold">PhysioRevive Clinic</p>
+<p class="mt-3 text-sm opacity-80">care@physiorevive.example.com · Instagram · Facebook · LinkedIn · YouTube</p>
+<p class="mt-4 text-xs opacity-70 max-w-2xl">This website gives general information only. It does not replace advice from a doctor. Results are different for every person. Sample content shown.</p>
+<p class="mt-2 text-xs opacity-70">© 2026 PhysioRevive Clinic</p></div></footer>
+
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 grid grid-cols-3 gap-2 p-2" style="background:var(--bg);padding-bottom:calc(.5rem + env(safe-area-inset-bottom,0px))" aria-label="Quick actions"><a class="btn b2 text-sm" href="tel:+919876543210">📞 Call</a><a class="btn b2 text-sm" target="_blank" rel="noopener" href="https://wa.me/919876543210">💬 Chat</a><a class="btn b1 text-sm" href="#book">Book</a></nav>
+<a class="hidden md:grid fixed right-6 bottom-6 z-50 w-14 h-14 rounded-full place-items-center pulse text-2xl" style="background:#25D366" target="_blank" rel="noopener" href="https://wa.me/919876543210" aria-label="Chat on WhatsApp">💬</a>
+<dialog id="dlg"><div class="text-5xl" id="di"></div><h3 id="dt" class="text-2xl font-bold mt-2"></h3><p id="dd" class="mt-3 mut"></p><p id="dm" class="mt-3 text-sm font-semibold"></p><div class="flex gap-3 mt-6"><a href="#book" class="btn b1" id="dbk">Book this</a><button class="btn b2" id="dx">Close</button></div></dialog>
+
+<script>
+const $=s=>document.querySelector(s),W="919876543210";
+const S=[["🦴","Back and Neck Pain","Pain from sitting too long, stiff neck, slipped disc or lower back pain. We find the cause and ease it.","45 min · 6 to 10 visits"],["🏃","Sports Injury Care","Sprains, torn muscles, ligament injuries and getting back to your sport safely.","45 to 60 min · 8 to 16 visits"],["🦵","After Surgery","Knee, hip and shoulder recovery, step by step, from the first day.","45 min · 10 to 20 visits"],["🧠","Stroke and Nerve Care","Help for stroke, Parkinson's, Bell's palsy and paralysis. Family is taught how to help too.","60 min · ongoing"],["🩻","Bone and Joint Care","Fractures, joint pain and tendon problems.","45 min · 6 to 12 visits"],["🧒","Child Physiotherapy","Gentle, play-based care for slow development and posture.","40 min · varies"],["👵","Care for Older Adults","Better balance and strength to prevent falls.","40 min · ongoing"],["🤰","Women's Health","Care before and after pregnancy, and pelvic floor help.","45 min · 6 to 10 visits"],["🧍","Posture Fix","Fix slouching, rounded shoulders and a bent neck.","40 min · 6 to 8 visits"],["🙌","Hands-on Therapy","Gentle hand techniques to loosen stiff joints and tight muscles.","30 to 45 min"],["📍","Dry Needling","Very thin needles to relax tight muscle knots.","30 min · 3 to 6 visits"],["🫙","Cupping","Suction cups to relax muscles and improve blood flow.","30 min · 3 to 5 visits"],["⚡","Electro Therapy","Machines that ease pain and help healing (TENS, ultrasound, shockwave).","20 to 30 min"],["🎗️","Kinesio Taping","Stretchy tape that supports your joints and muscles.","15 min · add-on"],["🔥","Sciatica and Arthritis","Relief from leg nerve pain and stiff, painful joints.","45 min · 8 to 12 visits"]];
+const T=[["2008–12","Bachelor of Physiotherapy (BPT), Government Physiotherapy College"],["2012–14","Master's in Orthopaedics (MPT), Mumbai University"],["2014–17","Senior Physiotherapist, Sunrise Hospital"],["2017–19","Sports Rehab Doctor for football and cricket teams"],["2019–21","Head of Rehab, Wellness Hospital"],["2021–now","Started PhysioRevive Clinic"]];
+const ST=[["🔍","Check-up","We listen and test how you move."],["💡","Find the cause","We explain what is wrong in simple words."],["📝","Your plan","A plan made just for you."],["🙌","Treatment","Hands-on care and therapy."],["🏠","Home exercises","Easy exercises to do at home."],["📈","Follow-up","We track your progress."]];
+const P=[["Single visit",800,"At the clinic"],["5 visits",3500,"Save 12%"],["10 visits",6500,"Best value · save 19%"],["Home visit",1200,"Per visit"],["Online talk",500,"30 minutes"]];
+const R=[["Rohit S.","Neck pain","Years of desk-job pain went away in 6 visits. He taught me exercises I still do."],["Meera K.","Knee replacement","He came to my home every day after surgery. I was walking confidently in weeks."],["Aditya P.","Knee ligament injury","I got back on the cricket field stronger than before."],["Sunita D.","Back pain after baby","Very gentle, kind and professional. I recommend him to every woman."],["Rajesh N.","Father's stroke","My father's hand moves much better now. Our family is very thankful."]];
+const Q=[["What happens on my first visit?","It takes about 60 minutes. We talk, check how you move, tell you what is wrong, and start your first treatment."],["How many visits will I need?","Many people feel better in 3 to 4 visits. After checking you, we will tell you honestly how many you need."],["Do you take insurance?","We give you a full bill that you can send to your insurance company. Please check your policy first."],["How do home visits work?","Message us at least 3 hours before. It is free within 5 km and ₹300 for 5 to 15 km."],["Can I cancel my visit?","Yes. Please tell us 4 hours before and we will move your visit for free."],["What should I wear?","Loose, comfy clothes so we can reach the painful area."],["Will it hurt?","Some treatments can feel strong, but you are always in control. We never push through sharp pain."],["Do you offer online visits?","Yes. A 30-minute video call for advice, exercises and check-ups."]];
+const G=[["🏥","Reception","#0B7A75,#35B6AA"],["🛏️","Treatment room","#FF6F4D,#FFA78F"],["🏋️","Exercise area","#083B40,#0B7A75"],["⚡","Therapy machines","#E0A100,#FFC857"],["🧒","Kids corner","#6C5CE7,#A29BFE"],["🧰","Home visit kit","#00A68C,#7BE0C8"]];
+const h=(a,f)=>a.map(f).join("");
+$("#mq").innerHTML=h([1,2],()=>h(["Indian Association of Physiotherapists","Mumbai Sports Council","Wellness Today","HealthLine India","Fitness Weekly","City Doctors Network"],x=>`<span class="px-8">⭐ ${x}</span>`));
+$("#cnt").innerHTML=h([["🗓️",12,"+","years of experience"],["😊",8500,"+","patients treated"],["💪",40000,"+","sessions done"],["❤️",98,"%","happy patients"]],x=>`<div class="card p-5 rv"><div class="text-3xl">${x[0]}</div><b class="text-3xl font-extrabold" style="color:var(--teal)"><span data-n="${x[1]}">0</span>${x[2]}</b><p class="mut text-sm">${x[3]}</p></div>`);
+$("#tl").innerHTML=h(T,x=>`<li class="rv"><b style="color:var(--coral)">${x[0]}</b><p>${x[1]}</p></li>`);
+$("#sg").innerHTML=h(S,(x,i)=>`<button class="card srv p-6 rv" data-i="${i}"><div class="ic text-4xl inline-block">${x[0]}</div><h3 class="text-lg font-bold mt-3">${x[1]}</h3><p class="mut text-sm mt-1">${x[2].split(".")[0]}.</p></button>`);
+$("#steps").innerHTML=h(ST,(x,i)=>`<li class="card p-6 rv"><div class="text-4xl">${x[0]}</div><h3 class="text-xl font-bold mt-3"><span style="color:var(--coral)">${i+1}.</span> ${x[1]}</h3><p class="mut text-sm mt-1">${x[2]}</p></li>`);
+$("#gal").innerHTML=h(G,x=>`<div class="tile rv" style="background:linear-gradient(135deg,${x[2]})"><div><span>${x[0]}</span>${x[1]}</div></div>`);
+$("#pg").innerHTML=h(P,x=>{const b=x[0]==="10 visits";return`<div class="card p-6 rv text-center ${b?"md:-translate-y-3":""}" style="${b?"border:3px solid var(--coral)":""}"><h3 class="font-bold">${x[0]}</h3><p class="text-3xl font-extrabold mt-2" style="color:var(--teal)">₹${x[1].toLocaleString("en-IN")}</p><p class="mut text-sm mt-1">${x[2]}</p><a href="#book" class="btn ${b?"b1":"b2"} mt-4 text-sm">Book this</a></div>`});
+$("#ts").innerHTML=h(R,x=>`<figure class="snap-start shrink-0 w-72 p-6 rounded-3xl" style="background:#ffffff14"><div style="color:var(--sun)" aria-label="5 stars">★★★★★</div><blockquote class="mt-2">“${x[2]}”</blockquote><figcaption class="mt-3 text-sm"><b>${x[0]}</b><br><span class="opacity-70">${x[1]}</span></figcaption></figure>`);
+$("#fq").innerHTML=h(Q,x=>`<details class="border-b"><summary>${x[0]}</summary><p class="mut pb-4">${x[1]}</p></details>`);
+const dlg=$("#dlg");document.addEventListener("click",e=>{const b=e.target.closest(".srv");if(b){const s=S[b.dataset.i];$("#di").textContent=s[0];$("#dt").textContent=s[1];$("#dd").textContent=s[2];$("#dm").textContent="Usually: "+s[3];dlg.showModal()}});
+$("#dx").onclick=()=>dlg.close();$("#dbk").onclick=()=>dlg.close();
+$("#theme").onclick=()=>{const r=document.documentElement;r.dataset.theme=getComputedStyle(r).getPropertyValue("--bg").trim()==="#071E21"?"light":"dark"};
+const n=new Date(),hr=n.getHours()+n.getMinutes()/60,o=n.getDay()!==0&&hr>=9&&hr<19,ob=$("#open");ob.textContent=o?"🟢 We are open now":"🔴 Closed now";ob.style.background=o?"#0B9A6E":"#b3402f";
+$("#f").onsubmit=e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target)),er=$("#err");
+if(!f.n.trim()||!/^[+\d\s-]{8,15}$/.test(f.p.trim())){er.textContent="Please enter your name and a correct phone number.";return}er.textContent="";
+const t=`Hi Dr. Mehta, I want to book a visit.\nName: ${f.n}\nPhone: ${f.p}\nAge: ${f.a||"-"}\nProblem: ${f.c}\nWhere: ${f.v}\nWhen: ${f.d||"any time"}\nNote: ${f.m||"-"}`;
+$("#ok").classList.remove("hidden");gsap.from("#ok",{y:12,opacity:0});window.open(`https://wa.me/${W}?text=${encodeURIComponent(t)}`,"_blank")};
+let ly=0;addEventListener("scroll",()=>{const y=scrollY;$("#nav").style.transform=y>ly&&y>200?"translateY(-110%)":"none";ly=y;$("#bar").style.width=y/(document.body.scrollHeight-innerHeight)*100+"%"},{passive:true});
+const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;gsap.registerPlugin(ScrollTrigger);
+function intro(){
+ $("#h1").innerHTML=$("#h1").textContent.split(" ").map(w=>`<span style="display:inline-block;overflow:hidden;vertical-align:top"><span class="w" style="display:inline-block">${w}&nbsp;</span></span>`).join("");
+ if(rm)return;
+ gsap.from(".w",{yPercent:110,stagger:.07,duration:.9,ease:"power4.out"});
+ gsap.from("#hero-art",{scale:.8,opacity:0,duration:1.1,ease:"back.out(1.6)"});
+ gsap.to("#o1",{x:-60,y:50,repeat:-1,yoyo:true,duration:6,ease:"sine.inOut"});gsap.to("#o2",{x:70,y:-40,repeat:-1,yoyo:true,duration:7,ease:"sine.inOut"});
+ addEventListener("mousemove",e=>{gsap.to("#hero-art",{x:(e.clientX/innerWidth-.5)*24,y:(e.clientY/innerHeight-.5)*18,duration:.6})});
+ gsap.utils.toArray(".rv").forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 90%"}}));
+ gsap.utils.toArray("[data-n]").forEach(el=>{const v=+el.dataset.n,o={x:0};gsap.to(o,{x:v,duration:2,scrollTrigger:{trigger:el,start:"top 92%"},onUpdate:()=>el.textContent=Math.round(o.x).toLocaleString("en-IN")})});
+ const r=$("#route");gsap.to("#car",{duration:5,repeat:-1,ease:"none",motionPath:undefined,onUpdate:function(){const p=r.getPointAtLength(r.getTotalLength()*this.progress());$("#car").setAttribute("x",p.x-12);$("#car").setAttribute("y",p.y+8)}});
+ gsap.from("#pin",{scale:.2,transformOrigin:"260px 50px",repeat:-1,yoyo:true,duration:1,ease:"sine.inOut"});
+}
+const c={v:0};gsap.to(c,{v:100,duration:rm?.1:1.4,ease:"power2.inOut",onUpdate:()=>$("#pc").textContent=Math.round(c.v),onComplete:()=>{gsap.to("#pre",{yPercent:-100,duration:.8,ease:"power4.inOut",onComplete:()=>$("#pre").remove()});intro()}});
+</script>
+</body>
+</html>
